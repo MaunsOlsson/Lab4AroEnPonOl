@@ -1,3 +1,6 @@
 print.reg <- function(x){
-  "COOL STUFF"
+  cat("Coefficients:\n")
+  print_df <- as.data.frame(t(x$beta))
+  rownames(print_df) <- ""
+  print(print_df)
 }
