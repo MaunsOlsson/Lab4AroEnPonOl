@@ -16,7 +16,8 @@
 
 reg <- setRefClass("reg", fields = list(beta = "matrix", fits = "matrix", e = "matrix",
                                               df = "numeric", residvar = "numeric",
-                                              beta_var = "matrix", t = "matrix", prob = "matrix"))
+                                              beta_var = "matrix", t = "matrix", prob = "matrix",
+                                        formula = "formula", y_names = "character"))
 
 
 
@@ -44,7 +45,8 @@ linreg <- function(formula, data){
   X <- model.matrix(formula, data)
 
   # Picks out y from the formula
-  y <- data[[ variables[!(variables %in% colnames(X))] ]]
+  y_names <- variables[!(variables %in% colnames(X))]
+  y <- data[[ y_names ]]
 
   if( !is.numeric( data[[variables[!(variables %in% colnames(X))]]] ) ){stop("The response has to be numeric.")}
   QR <- qr(X)
@@ -58,7 +60,9 @@ linreg <- function(formula, data){
   beta_var <- sigma2 * solve(t(R)%*%R)
   t <- beta / sqrt(diag(beta_var))
   prob <- pt(t, df = df, lower.tail = FALSE)
-  return(reg("beta" = beta, "fits" = fits, "e" = e, "df" = df, "residvar" = sigma2, "beta_var" = beta_var, "t" = t, "prob" = prob) )
+
+  return(reg("beta" = beta, "fits" = fits, "e" = e, "df" = df, "residvar" = sigma2,
+             "beta_var" = beta_var, "t" = t, "prob" = prob, "formula" = as.formula(formula), "y_names" =  y_names))
 
 }
 
