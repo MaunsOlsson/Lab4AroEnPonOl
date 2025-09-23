@@ -7,12 +7,17 @@
 #' @returns Returns a regressionobject that has special methods for plot, resid, pred, coef, summary
 #' @export
 #' @examples
-#' dijkstra(wiki_graph, 1)
+#' linreg(Sepal.Length ~ Sepal.Width + Petal.Length, iris)
 #'
-#' dijkstra(wiki_graph, 3)
+#' linreg(DAX ~ SMI + CAC, EuStockMarkets)
 #'
 #'
-#' @source Dijkstra's algorithm. (September, 2025). Retrieved from \href{https://en.wikipedia.org/w/index.php?title=Dijkstra\%27s_algorithm&oldid=1306611316}{Wikipedia}.
+#' @source Dijkstra's algorithm. (September, 2025). Retrieved from \href{https://en.wikipedia.org/wiki/QR_decomposition}{Wikipedia}.
+
+reg <- setRefClass("reg", fields = list(beta = "matrix", fits = "matrix", e = "matrix",
+                                              df = "numeric", residvar = "numeric",
+                                              beta_var = "matrix", t = "matrix", prob = "matrix"))
+
 
 
 linreg <- function(formula, data){
@@ -41,8 +46,7 @@ linreg <- function(formula, data){
   # Picks out y from the formula
   y <- data[[ variables[!(variables %in% colnames(X))] ]]
 
-
-
+  if( !is.numeric( data[[variables[!(variables %in% colnames(X))]]] ) ){stop("The response has to be numeric.")}
   QR <- qr(X)
   R <- qr.R(QR)
   # Solving RBeta = Q^ty
@@ -54,49 +58,42 @@ linreg <- function(formula, data){
   beta_var <- sigma2 * solve(t(R)%*%R)
   t <- beta / sqrt(diag(beta_var))
   prob <- pt(t, df = df, lower.tail = FALSE)
-
-
-
+  return(reg("beta" = beta, "fits" = fits, "e" = e, "df" = df, "residvar" = sigma2, "beta_var" = beta_var, "t" = t, "prob" = prob) )
 
 }
 
 data(iris)
-
 model <- lm(Sepal.Length ~ Sepal.Width + Petal.Length, iris)
-
-
 model2 <- linreg(Sepal.Length ~ Sepal.Width + Petal.Length, iris)
 
 
-e <- 1:50000
-microbenchmark(sum(e^2), t(e)%*%e, times = 10)
-
-X <- model.matrix(Sepal.Length ~ Sepal.Width + Petal.Length, iris)
-A <- t(X)%*%X
-solve(A)
-
-
-qr.coef(qr(X), iris$Sepal.Length)
-solve(R%*%X, t(Q)%*%y)
-
-
-qr(X)
-qr.R(qr(X))
-
-install.packages("microbenchmark")
 library(microbenchmark)
 
 
 X <- model.matrix(DAX ~ SMI + CAC, EuStockMarkets)
 A <- t(X)%*%X
 
-QR <- qr(X)
-solve(qr.R(QR), t(qr.Q(QR)) %*% EuStockMarkets[, 1])
-microbenchmark(solve(A)%*%t(X)%*%EuStockMarkets[, 1], solve(qr.R(QR), t(qr.Q(QR)) %*% EuStockMarkets[, 1]), times = 100)
+data("EuStockMarkets")
+
+for (i in 1:25) {
+
+  EuStockMarkets <- cbind(EuStockMarkets, rnorm(nrow(EuStockMarkets)))
+}
+
+testfun <- function() {
+  X <- model.matrix(DAX ~ ., EuStockMarkets)
+  A <- t(X)%*%X
+  QR <- qr(X)
+  solve(qr.R(QR), t(qr.Q(QR)) %*% EuStockMarkets[, 1])
+}
+
+noQR <- function(){
+  X <- model.matrix(DAX ~ ., EuStockMarkets)
+  A <- t(X)%*%X
+  solve(A)%*%t(X)%*%EuStockMarkets[, 1]
+}
+
+microbenchmark(noQR, testfun, times = 10000)
 
 
 
-
-test2 <- linreg("Sepal.Length ~ Sepal.Width", iris)
-
-test <- formula(Sepal.Length ~ Sepal.Width)
