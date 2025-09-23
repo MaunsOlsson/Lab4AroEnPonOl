@@ -26,7 +26,7 @@ linreg <- function(formula, data){
       formula <- as.formula(formula),
       error = function(e){stop("Formula is neither a formula object or can be converted to a formula")},
       warning = function(w) {print("Your formula has problems with being converted to a formula")})
-  } else {print("This is working")}
+  } else {}
 
 
   variables <- all.vars(formula)
@@ -66,6 +66,11 @@ data(iris)
 model <- lm(Sepal.Length ~ Sepal.Width + Petal.Length, iris)
 model2 <- linreg(Sepal.Length ~ Sepal.Width + Petal.Length, iris)
 
+print.reg <- function(x) { cat("din mamma")
+
+}
+
+print(model2)
 
 library(microbenchmark)
 
