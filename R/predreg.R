@@ -12,3 +12,5 @@ predict.reg <- function(model, new_data){
 
 }
 
+
+

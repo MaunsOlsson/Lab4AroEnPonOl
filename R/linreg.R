@@ -59,7 +59,7 @@ linreg <- function(formula, data){
   sigma2 <- sum(e^2) / df
   beta_var <- sigma2 * solve(t(R)%*%R)
   t <- beta / sqrt(diag(beta_var))
-  prob <- pt(t, df = df, lower.tail = FALSE)
+  prob <- 2 * pt(t, df = df, lower.tail = FALSE)
 
   return(reg("beta" = beta, "fits" = fits, "e" = e, "df" = df, "residvar" = sigma2,
              "beta_var" = beta_var, "t" = t, "prob" = prob, "formula" = as.formula(formula), "y_names" =  y_names))
