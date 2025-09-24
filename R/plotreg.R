@@ -7,9 +7,9 @@
 #'
 #' @examples plot(linreg(Sepal.Length ~ Sepal.Width, iris))
 
-requireNamespace("ggplot2", quietly = TRUE)
-plot.reg <- function(x){
 
+plot.reg <- function(x){
+  requireNamespace("ggplot2", quietly = TRUE)
   resid <- x$e
 
   plot_df <- data.frame(e = resid, fits = x$fits, std_resid = resid / sqrt(x$residvar))
