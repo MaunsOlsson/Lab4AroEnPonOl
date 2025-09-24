@@ -1,7 +1,10 @@
 pred <- function (model, new_data) UseMethod("predict")
 
-predict.reg <- function(model, new_data){
+predict.reg <- function(model, new_data == "no data"){
 
+  if ($) {
+
+  }
   #For model.matrix functionality with Y:
   y_names <- model$y_names
   y <- matrix(0, nrow(new_data), length(y_names))

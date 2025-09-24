@@ -7,7 +7,7 @@ summary.reg <- function(x){
   cat("Residualspread:", x$residvar, "       df:", x$df)
 }
 
-test <- summary(model2)
+
 
 
 

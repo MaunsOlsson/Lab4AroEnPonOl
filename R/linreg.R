@@ -60,7 +60,7 @@ linreg <- function(formula, data){
   output <- list(beta = beta, fits = fits, e = e,
                  df = df, residvar = sigma2,
                  beta_var = beta_var, t = t, prob = prob,
-                 formula = formula, y_names = y_names)
+                 formula = formula, y_names = y_names, data = match.call())
   class(output) <- "reg"
   return(output)
 }
