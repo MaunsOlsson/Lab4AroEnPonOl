@@ -1,3 +1,3 @@
-resid.reg <- function(x){
+residuals.reg <- function(x){
   x$e
 }
