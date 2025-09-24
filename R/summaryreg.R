@@ -1,4 +1,4 @@
-#' @title resid.reg
+#' @title summary.reg
 #'
 #' @param x A reg class object
 #'

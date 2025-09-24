@@ -2,7 +2,7 @@
 % Please edit documentation in R/summaryreg.R
 \name{summary.reg}
 \alias{summary.reg}
-\title{resid.reg}
+\title{summary.reg}
 \usage{
 \method{summary}{reg}(x)
 }
@@ -13,7 +13,7 @@
 Returns the beta-coefficients from the model as well as their standard errors and corresponding t- and p-values.
 }
 \description{
-resid.reg
+summary.reg
 }
 \examples{
 summary(linreg(Sepal.Length ~ Sepal.Width, iris))
