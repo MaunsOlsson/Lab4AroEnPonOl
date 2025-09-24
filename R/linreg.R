@@ -4,7 +4,7 @@
 #'
 #' @param formula A formula object describing how the designmatrix is supposed to look and what the variable of interest is.
 #' @param data A dataframe where all columns included are numeric
-#' @returns Returns a regressionobject that has special methods for plot, resid, pred, coef, summary
+#' @returns Returns a regressionobject that has special methods for plot, resid, print, pred, coef and summary
 #' @export
 #' @examples
 #' linreg(Sepal.Length ~ Sepal.Width + Petal.Length, iris)

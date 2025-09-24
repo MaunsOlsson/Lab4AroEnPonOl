@@ -6,6 +6,7 @@
 #' @export
 #'
 #' @examples
+#' residuals(linreg(Sepal.Length ~ Sepal.Width, iris))[1:5]
 
 residuals.reg <- function(x){
   x$e

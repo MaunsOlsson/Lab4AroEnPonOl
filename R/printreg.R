@@ -8,7 +8,8 @@
 #' @examples print(linreg(Sepal.Length ~ Sepal.Width, iris)) ## Coefficients: 6.526223  -0.2233611
 
 print.reg <- function(x){
-  cat("Coefficients:\n")
+  print(x$data)
+  cat("\nCoefficients:\n")
   print_df <- as.data.frame(t(x$beta))
   rownames(print_df) <- ""
   print(print_df)
