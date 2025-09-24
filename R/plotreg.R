@@ -1,5 +1,13 @@
-requireNamespace("ggplot2", quietly = TRUE)
+#' @title plot.reg
+#'
+#' @param x A reg class object
+#'
+#' @returns Returns a residual analysis which consists of two plots, fitted values vs residual and scale-location for each observation (fitted values vs standardized residual).
+#' @export
+#'
+#' @examples plot(linreg(Sepal.Length ~ Sepal.Width, iris))
 
+requireNamespace("ggplot2", quietly = TRUE)
 plot.reg <- function(x){
 
   resid <- x$e

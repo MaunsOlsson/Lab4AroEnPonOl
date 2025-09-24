@@ -12,12 +12,7 @@
 #' linreg(DAX ~ SMI + CAC, EuStockMarkets)
 #'
 #'
-#' @source Dijkstra's algorithm. (September, 2025). Retrieved from \href{https://en.wikipedia.org/wiki/QR_decomposition}{Wikipedia}.
-
-reg <- setRefClass("reg", fields = list(beta = "matrix", fits = "matrix", e = "matrix",
-                                              df = "numeric", residvar = "numeric",
-                                              beta_var = "matrix", t = "matrix", prob = "matrix",
-                                        formula = "formula", y_names = "character"))
+#' @source Bates, D. Matrix decompositions for regression analysis. Retrieved from \href{https://pages.stat.wisc.edu/~st849-1/lectures/Orthogonal.pdf}{Department of Statistics at University of Wisconsin–Madison}.
 
 
 
@@ -61,7 +56,11 @@ linreg <- function(formula, data){
   t <- beta / sqrt(diag(beta_var))
   prob <- 2 * pt(t, df = df, lower.tail = FALSE)
 
-  return(reg("beta" = beta, "fits" = fits, "e" = e, "df" = df, "residvar" = sigma2,
-             "beta_var" = beta_var, "t" = t, "prob" = prob, "formula" = as.formula(formula), "y_names" =  y_names))
-
+  # Output changes ######
+  output <- list(beta = beta, fits = fits, e = e,
+                 df = df, residvar = sigma2,
+                 beta_var = beta_var, t = t, prob = prob,
+                 formula = formula, y_names = y_names)
+  class(output) <- "reg"
+  return(output)
 }
