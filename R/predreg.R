@@ -1,11 +1,10 @@
-pred <- function (model, new_data) UseMethod("predict")
-
 #' @title predict.reg
 #'
 #' @param model A reg class object
 #' @param new_data a data.frame with character and numerical values.
 #'
 #' @returns Predicted values for the new_data, default is fitted values for the training data.
+#' @export predict.reg
 #' @export
 #'
 #' @examples predict(linreg(Sepal.Length ~ Sepal.Width, iris[-c(1:5), ]), iris[1:5, ])
@@ -22,8 +21,12 @@ predict.reg <- function(model, new_data = TRUE){
   names(new_data)[1:length(y_names)] <- y_names
 
   model.matrix(model$formula, new_data) %*% model$beta
-
 }
 
 
+#' @title Alternative prediction function
+#' @description
+#' See \code{\link[stats]{predict}} for details.
+#' @export
+pred <- function(object, ...){predict(object, ...)}
 

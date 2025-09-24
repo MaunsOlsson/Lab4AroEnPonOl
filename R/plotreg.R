@@ -3,6 +3,7 @@
 #' @param x A reg class object
 #'
 #' @returns Returns a residual analysis which consists of two plots, fitted values vs residual and scale-location for each observation (fitted values vs standardized residual).
+#' @export plot.reg
 #' @export
 #'
 #' @examples plot(linreg(Sepal.Length ~ Sepal.Width, iris))

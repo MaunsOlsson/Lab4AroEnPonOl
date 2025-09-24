@@ -1,8 +1,11 @@
 #' @title print.reg
+#' @description
+#' This prints out a regression model created from the function linreg.
 #'
 #' @param x A reg class object
 #'
 #' @returns Returns the coefficients of the linear regression model
+#' @export print.reg
 #' @export
 #'
 #' @examples print(linreg(Sepal.Length ~ Sepal.Width, iris)) ## Coefficients: 6.526223  -0.2233611

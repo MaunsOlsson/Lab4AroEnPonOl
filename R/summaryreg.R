@@ -1,9 +1,12 @@
 #' @title summary.reg
+#' @description
+#' Summarize an linear regression model from a custom made linear regression estimated with QR-decomposition.
 #'
 #' @param x A reg class object
 #'
 #' @returns Returns the beta-coefficients from the model as well as their standard errors and corresponding t- and p-values.
-#' @exportS3Method Lab4AroEnPonOl::summary
+#' @export summary.reg
+#' @export
 #'
 #' @examples
 #' summary(linreg(Sepal.Length ~ Sepal.Width, iris))

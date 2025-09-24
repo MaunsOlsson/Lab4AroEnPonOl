@@ -13,7 +13,7 @@
 Returns the coefficients of the linear regression model
 }
 \description{
-print.reg
+This prints out a regression model created from the function linreg.
 }
 \examples{
 print(linreg(Sepal.Length ~ Sepal.Width, iris)) ## Coefficients: 6.526223  -0.2233611

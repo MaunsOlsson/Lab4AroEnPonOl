@@ -3,6 +3,7 @@
 #' @param x A reg class object
 #'
 #' @returns Returns all the residuals for the linear model
+#' @export residuals.reg
 #' @export
 #'
 #' @examples
