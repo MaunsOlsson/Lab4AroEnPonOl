@@ -1,0 +1,54 @@
+---
+title: "my-vignette"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{my-vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(Lab4AroEnPonOl)
+```
+
+## Lab4AroEnPonOl
+The Lab4AroEnPonOl package contains the function linreg(). This function performs least sqaures linear regression on the dataset given the formula. Run ??linreg for more information on the output.
+linreg() implements linear regression through the QR decomposition and outputs an S3 object with methods implemented for pred(), plot(), print(), resid() and summary(). 
+
+```{r}
+model <- linreg(formula = Sepal.Length ~ Sepal.Width + Petal.Length, data = iris[-c(1:5), ])
+```
+
+Summary summarizes the estimated coefficients, Beta and their standard errors, SE. 
+
+```{r}
+summary(model)
+```
+resid() and residuals() return the residuals $\varepsilon=y-\hat{y}$ for the model.
+```{r}
+resid(model)[1:3]
+residuals(model)[1:3]
+```
+
+plot() creates residualplots that can be used to study the performance and the models assumptions. Standardised residuals are calculated via $standardized\ residuals = \frac{\varepsilon}{\hat{\sigma_\varepsilon}}$. Where $\hat{\sigma_\varepsilon} = \frac{\Sigma\varepsilon_i^2}{n-p}$.
+```{r}
+plot(model)
+```
+
+Print and coef are very similar, but coef returns a vector while print does not.
+```{r}
+print(model)
+coef(model)
+```
+pred() and predict() uses the estimated coefficients to make predictions for new data.
+```{r}
+pred(model, iris[1:3, ])
+predict(model, iris[1:3, ])
+```
