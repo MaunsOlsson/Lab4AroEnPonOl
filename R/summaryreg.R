@@ -3,7 +3,7 @@
 #' @param x A reg class object
 #'
 #' @returns Returns the beta-coefficients from the model as well as their standard errors and corresponding t- and p-values.
-#' @exportS3Method Lab4AroEnPonOl::summary
+#' @exportS3Method base::summary
 #'
 #' @examples
 #' summary(linreg(Sepal.Length ~ Sepal.Width, iris))
