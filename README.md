@@ -12,15 +12,8 @@ To install the package run the following code:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("MaunsOlsson/Lab4AroEnPonOl")
+devtools::install_github("MaunsOlsson/Lab4AroEnPonOl", build_vignettes = TRUE)
 library(Lab4AroEnPonOl)
-```
-
-You can also install the development version of Lab3PonOlAroEn from [GitHub](https://github.com/) with:
-
-``` r
-# install.packages("pak")
-pak::pak("arreen/Lab3")
 ```
 
 ## Example
