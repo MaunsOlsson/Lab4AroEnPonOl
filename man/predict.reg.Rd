@@ -17,7 +17,7 @@
 Predicted values for the new_data.
 }
 \description{
-predict.reg
+Prediction method for reg object.
 }
 \examples{
 predict(linreg(Sepal.Length ~ Sepal.Width, iris[-c(1:5), ]), iris[1:5, ])

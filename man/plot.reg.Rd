@@ -3,6 +3,9 @@
 \name{plot.reg}
 \alias{plot.reg}
 \title{plot.reg}
+\source{
+See the R documentation for \code{\link[stats]{plot.lm}} for more information about the residuals vs fitted values and Scale-Location.
+}
 \usage{
 \method{plot}{reg}(x, ...)
 }
@@ -15,7 +18,7 @@
 Returns a residual analysis which consists of two plots, fitted values vs residual and scale-location for each observation (fitted values vs standardized residual).
 }
 \description{
-plot.reg
+This method function creates a residual analysis for reg objects.
 }
 \examples{
 plot(linreg(Sepal.Length ~ Sepal.Width, iris))

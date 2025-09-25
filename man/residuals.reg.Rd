@@ -2,7 +2,7 @@
 % Please edit documentation in R/residreg.R
 \name{residuals.reg}
 \alias{residuals.reg}
-\title{resid.reg}
+\title{residuals.reg}
 \usage{
 \method{residuals}{reg}(object, ...)
 }
@@ -15,7 +15,7 @@
 Returns all the residuals for the linear model
 }
 \description{
-resid.reg
+Applied residual function for object reg.
 }
 \examples{
 residuals(linreg(Sepal.Length ~ Sepal.Width, iris))[1:5]

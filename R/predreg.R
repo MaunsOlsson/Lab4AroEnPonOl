@@ -1,4 +1,6 @@
 #' @title predict.reg
+#' @description
+#' Prediction method for reg object.
 #'
 #' @param object A reg class object
 #' @param new_data a data.frame with character and numerical values. If no data.frame is given, the default to return is the fitted values for the training data.
@@ -27,9 +29,10 @@ predict.reg <- function(object, new_data = FALSE, ...){
 
 
 #' @title Alternative prediction function
+#' @description
+#' This is an alternative function for predict. See \code{\link[stats]{predict}} for details.
 #' @param object object that is used for the predictions
 #' @param ... other arguments
-#' See \code{\link[stats]{predict}} for details.
 #' @export
 
 pred <- function(object, ...){predict(object, ...)}

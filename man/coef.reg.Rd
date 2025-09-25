@@ -15,7 +15,7 @@
 Returns all estimated coefficients for the linear model
 }
 \description{
-coef.reg
+Function to return the coefficients for object reg.
 }
 \examples{
 coef(linreg(Sepal.Length ~ Sepal.Width, iris)) ## 6.526223  -0.2233611

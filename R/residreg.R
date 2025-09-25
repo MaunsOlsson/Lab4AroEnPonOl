@@ -1,4 +1,6 @@
-#' @title resid.reg
+#' @title residuals.reg
+#' @description
+#' Applied residual function for object reg.
 #'
 #' @param object A reg class object
 #' @param ... other arguments

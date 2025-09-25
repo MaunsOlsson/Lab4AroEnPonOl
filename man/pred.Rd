@@ -9,9 +9,8 @@ pred(object, ...)
 \arguments{
 \item{object}{object that is used for the predictions}
 
-\item{...}{other arguments
-See \code{\link[stats]{predict}} for details.}
+\item{...}{other arguments}
 }
 \description{
-Alternative prediction function
+This is an alternative function for predict. See \code{\link[stats]{predict}} for details.
 }

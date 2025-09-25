@@ -1,4 +1,6 @@
 #' @title plot.reg
+#' @description
+#' This method function creates a residual analysis for reg objects.
 #'
 #' @param x A reg class object
 #' @param ... Other arguments
@@ -9,6 +11,7 @@
 #' @import ggplot2
 #'
 #' @examples plot(linreg(Sepal.Length ~ Sepal.Width, iris))
+#' @source See the R documentation for \code{\link[stats]{plot.lm}} for more information about the residuals vs fitted values and Scale-Location.
 
 
 plot.reg <- function(x, ...){

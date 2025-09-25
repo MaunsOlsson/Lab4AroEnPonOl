@@ -1,4 +1,6 @@
 #' @title coef.reg
+#' @description
+#' Function to return the coefficients for object reg.
 #'
 #' @param object A reg class object
 #' @param ... other arguments
