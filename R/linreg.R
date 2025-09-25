@@ -9,7 +9,7 @@
 #' @examples
 #' linreg(Sepal.Length ~ Sepal.Width + Petal.Length, iris)
 #'
-#' linreg(DAX ~ SMI + CAC, EuStockMarkets)
+#' linreg(speed ~ dist, cars)
 #'
 #'
 #' @source Bates, D. Matrix decompositions for regression analysis. Retrieved from \href{https://pages.stat.wisc.edu/~st849-1/lectures/Orthogonal.pdf}{Department of Statistics at University of Wisconsin–Madison}.
