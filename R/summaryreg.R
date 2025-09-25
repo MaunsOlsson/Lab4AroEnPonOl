@@ -2,7 +2,8 @@
 #' @description
 #' Summarize an linear regression model from a custom made linear regression estimated with QR-decomposition.
 #'
-#' @param x A reg class object
+#' @param object A reg class object
+#' @param ... Other arguments
 #'
 #' @returns Returns the beta-coefficients from the model as well as their standard errors and corresponding t- and p-values.
 #' @export summary.reg
@@ -11,8 +12,9 @@
 #' @examples
 #' summary(linreg(Sepal.Length ~ Sepal.Width, iris))
 
-summary.reg <- function(x){
-  plot_df <- data.frame("Beta" = x$beta, "SE" = sqrt(diag(x$beta_var)), "t val" = x$t, "P(|T|>t)" = x$prob)
+summary.reg <- function(object, ...){
+
+  plot_df <- data.frame("Beta" = object$beta, "SE" = sqrt(diag(object$beta_var)), "t val" = object$t, "P(|T|>t)" = object$prob)
   colnames(plot_df)[3:4] <- c("t-val", "P(|T|>t)")
 
   dots <- sapply(plot_df$`P(|T|>t)`, simplify = T, function(x){
@@ -27,7 +29,7 @@ summary.reg <- function(x){
   colnames(plot_df)[5] <- ""
   print(plot_df)
   cat("\n")
-  cat("Residual standard error:", sqrt(x$residvar), "on", x$df, "degrees of freedom")
+  cat("Residual standard error:", sqrt(object$residvar), "on", object$df, "degrees of freedom")
 }
 
 
