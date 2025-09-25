@@ -6,8 +6,6 @@
 #' @returns Predicted values for the new_data.
 #' @export predict.reg
 #' @export
-#' @importFrom stats predict
-#'
 #'
 #' @examples predict(linreg(Sepal.Length ~ Sepal.Width, iris[-c(1:5), ]), iris[1:5, ])
 
@@ -27,10 +25,10 @@ predict.reg <- function(model, new_data = FALSE){
 
 
 #' @title Alternative prediction function
-#' @param object model object to pass to predict
-#' @param ... additional arguments to pass to predict
 #' @description
+#' @param object object that is used for the predictions
+#' @param ... other arguments
 #' See \code{\link[stats]{predict}} for details.
 #' @export
-pred <- function(object, ...){predict(object, ...)}
+pred <- function(object, ...){UseMethod("predict")}
 
