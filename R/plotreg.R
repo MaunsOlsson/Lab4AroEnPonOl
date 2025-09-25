@@ -5,6 +5,7 @@
 #' @returns Returns a residual analysis which consists of two plots, fitted values vs residual and scale-location for each observation (fitted values vs standardized residual).
 #' @export plot.reg
 #' @export
+#' @import ggplot2
 #'
 #' @examples plot(linreg(Sepal.Length ~ Sepal.Width, iris))
 

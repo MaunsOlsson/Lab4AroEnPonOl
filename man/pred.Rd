@@ -6,6 +6,11 @@
 \usage{
 pred(object, ...)
 }
+\arguments{
+\item{object}{model object to pass to predict}
+
+\item{...}{additional arguments to pass to predict}
+}
 \description{
 See \code{\link[stats]{predict}} for details.
 }
