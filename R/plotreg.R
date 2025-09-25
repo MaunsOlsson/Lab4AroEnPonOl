@@ -16,7 +16,7 @@ plot.reg <- function(x, ...){
   resid <- x$e
 
   plot_df <- data.frame(e = resid, fits = x$fits, std_resid = resid / sqrt(x$residvar))
-  print(ggplot2::ggplot(plot_df) + ggplot2::geom_point(ggplot2::aes(x = fits, y = e)) + ggplot2::labs(title = "Resid vs fits", y = "Residuals", x = "Fitted values") + ggplot2::theme_bw())
-  print(ggplot2::ggplot(plot_df) + ggplot2::geom_point(ggplot2::aes(x = fits, y = sqrt(abs(std_resid)) )) + ggplot2::labs(title = "Scale-location", y = expression(sqrt("|Standardized residuals|")), x = "Fitted values") + ggplot2::theme_bw())
+  print(ggplot(plot_df) + geom_point(aes(x = fits, y = e)) + labs(title = "Resid vs fits", y = "Residuals", x = "Fitted values") + theme_bw())
+  print(ggplot(plot_df) + geom_point(aes(x = fits, y = sqrt(abs(std_resid)) )) + labs(title = "Scale-location", y = expression(sqrt("|Standardized residuals|")), x = "Fitted values") + theme_bw())
 }
 
