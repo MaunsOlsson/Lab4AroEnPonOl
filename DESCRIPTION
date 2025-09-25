@@ -14,7 +14,6 @@ Authors@R: c(
       role = c("aut")
     )
   )
-  )
 Description: This package contains all the solutions for QR decompesition, S3 implementation and others.
 License: MIT + file LICENSE
 Encoding: UTF-8
