@@ -4,15 +4,15 @@
 \alias{predict.reg}
 \title{predict.reg}
 \usage{
-\method{predict}{reg}(model, new_data = TRUE)
+\method{predict}{reg}(model, no_new_data = TRUE)
 }
 \arguments{
 \item{model}{A reg class object}
 
-\item{new_data}{a data.frame with character and numerical values.}
+\item{new_data}{a data.frame with character and numerical values. If no data.frame is given, the default is fitted values for the training data.}
 }
 \value{
-Predicted values for the new_data, default is fitted values for the training data.
+Predicted values for the new_data.
 }
 \description{
 predict.reg
