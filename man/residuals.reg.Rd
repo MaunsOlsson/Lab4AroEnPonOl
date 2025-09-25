@@ -4,10 +4,10 @@
 \alias{residuals.reg}
 \title{resid.reg}
 \usage{
-\method{residuals}{reg}(x, ...)
+\method{residuals}{reg}(object, ...)
 }
 \arguments{
-\item{x}{A reg class object}
+\item{object}{A reg class object}
 
 \item{...}{other arguments}
 }

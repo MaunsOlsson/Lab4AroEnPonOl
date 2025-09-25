@@ -1,6 +1,6 @@
 #' @title resid.reg
 #'
-#' @param x A reg class object
+#' @param object A reg class object
 #' @param ... other arguments
 #'
 #' @returns Returns all the residuals for the linear model
@@ -10,6 +10,6 @@
 #' @examples
 #' residuals(linreg(Sepal.Length ~ Sepal.Width, iris))[1:5]
 
-residuals.reg <- function(x, ...){
-  x$e
+residuals.reg <- function(object, ...){
+  object$e
 }
