@@ -4,7 +4,7 @@
 [![R-CMD-check](https://github.com/MaunsOlsson/Lab4AroEnPonOl/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/MaunsOlsson/Lab4AroEnPonOl/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-The goal of Lab3PonOlAroEn is to program an euclidean and dijkstra algorithm and make it into a R package.
+The goal of Lab4AroEnPonOl is to program a linear regression object with QR decompisition and make it an S3 object.
 
 ## Installation
 
@@ -20,11 +20,11 @@ library(Lab4AroEnPonOl)
 
 Here is a short showcase of the functions
 ``` r
-library(Lab3PonOlAroEn)
-## Showcase of euclidean(). This function finds the greatest common divisor between two whole numbers.
- euclidean(123612, 13892347912)
+library(Lab4AroEnPonOl)
 
-## Showcase of dijkstra(). This function finds the shortest path from one node to every other node in a weighted graph.
-data(wiki_graph)
-dijkstra(wiki_graph, 1)
+model <- linreg(formula = Sepal.Length ~ Sepal.Width + Petal.Length, data = iris[-c(1:5), ])
+
+summary(model)
+plot(model)
+predict(model, iris[1:3, ])
 ```
