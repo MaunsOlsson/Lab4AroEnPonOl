@@ -18,6 +18,8 @@ Description: This package contains all the solutions for QR decompesition, S3 im
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
+Imports:
+    ggplot2
 Suggests: 
     knitr,
     rmarkdown,
