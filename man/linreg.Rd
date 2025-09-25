@@ -23,7 +23,7 @@ This function is an R implementation of least squares linear regression using th
 \examples{
 linreg(Sepal.Length ~ Sepal.Width + Petal.Length, iris)
 
-linreg(DAX ~ SMI + CAC, EuStockMarkets)
+linreg(speed ~ dist, cars)
 
 
 }
