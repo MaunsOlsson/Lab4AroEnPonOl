@@ -7,11 +7,11 @@
 \method{predict}{reg}(object, new_data = FALSE, ...)
 }
 \arguments{
+\item{object}{A reg class object}
+
 \item{new_data}{a data.frame with character and numerical values. If no data.frame is given, the default to return is the fitted values for the training data.}
 
 \item{...}{Other arguments}
-
-\item{model}{A reg class object}
 }
 \value{
 Predicted values for the new_data.

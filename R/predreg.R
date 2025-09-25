@@ -1,6 +1,6 @@
 #' @title predict.reg
 #'
-#' @param model A reg class object
+#' @param object A reg class object
 #' @param new_data a data.frame with character and numerical values. If no data.frame is given, the default to return is the fitted values for the training data.
 #' @param ... Other arguments
 #'
@@ -13,16 +13,16 @@
 
 predict.reg <- function(object, new_data = FALSE, ...){
   if (isFALSE(new_data)) {
-    return(model$fits)
+    return(object$fits)
   }
 
   #For model.matrix functionality with Y:
-  y_names <- model$y_names
+  y_names <- object$y_names
   y <- matrix(0, nrow(new_data), length(y_names))
   new_data <- cbind(y, new_data)
   names(new_data)[1:length(y_names)] <- y_names
 
-  model.matrix(model$formula, new_data) %*% model$beta
+  model.matrix(object$formula, new_data) %*% object$beta
 }
 
 
