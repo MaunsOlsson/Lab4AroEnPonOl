@@ -1,7 +1,7 @@
 #' @title predict.reg
 #'
 #' @param model A reg class object
-#' @param new_data a data.frame with character and numerical values. If no data.frame is given, the default is fitted values for the training data.
+#' @param new_data a data.frame with character and numerical values. If no data.frame is given, the default to return is the fitted values for the training data.
 #'
 #' @returns Predicted values for the new_data.
 #' @export predict.reg
@@ -9,8 +9,8 @@
 #'
 #' @examples predict(linreg(Sepal.Length ~ Sepal.Width, iris[-c(1:5), ]), iris[1:5, ])
 
-predict.reg <- function(model, no_new_data = TRUE){
-  if (isTRUE(no_new_data)) {
+predict.reg <- function(model, new_data = FALSE){
+  if (isFALSE(new_data)) {
     return(model$fits)
   }
 

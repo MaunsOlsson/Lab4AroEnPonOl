@@ -19,7 +19,7 @@ library(Lab4AroEnPonOl)
 ```
 
 ## Lab4AroEnPonOl
-The Lab4AroEnPonOl package contains the function linreg(). This function performs least sqaures linear regression on the dataset given the formula. Run ??linreg for more information on the output.
+The Lab4AroEnPonOl package contains the function linreg(). This function performs least sqaures linear regression using the formula on the dataset given. Run ??linreg for more information on the output.
 linreg() implements linear regression through the QR decomposition and outputs an S3 object with methods implemented for pred(), plot(), print(), resid() and summary(). 
 
 ```{r}
@@ -37,7 +37,7 @@ resid(model)[1:3]
 residuals(model)[1:3]
 ```
 
-plot() creates residualplots that can be used to study the performance and the models assumptions. Standardised residuals are calculated via $standardized\ residuals = \frac{\varepsilon}{\hat{\sigma_\varepsilon}}$. Where $\hat{\sigma_\varepsilon} = \frac{\Sigma\varepsilon_i^2}{n-p}$.
+plot() creates residualplots that can be used to study the performance and the models assumptions. Standardised residuals are calculated via $standardized\ residuals = \frac{\varepsilon}{\hat{\sigma_\varepsilon}}$. Where $\hat{\sigma_\varepsilon}^2 = \frac{\Sigma\varepsilon_i^2}{n-p}$.
 ```{r}
 plot(model)
 ```
