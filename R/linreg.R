@@ -17,7 +17,7 @@
 
 
 linreg <- function(formula, data){
-  if(class(formula) != "formula"){
+  if(inherits(x = formula, what = "formula")){
     tryCatch(
       formula <- as.formula(formula),
       error = function(e){stop("Formula is neither a formula object or can be converted to a formula")},
