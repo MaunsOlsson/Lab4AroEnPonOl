@@ -4,10 +4,12 @@
 \alias{summary.reg}
 \title{summary.reg}
 \usage{
-\method{summary}{reg}(x)
+\method{summary}{reg}(object, ...)
 }
 \arguments{
-\item{x}{A reg class object}
+\item{object}{A reg class object}
+
+\item{...}{Other arguments}
 }
 \value{
 Returns the beta-coefficients from the model as well as their standard errors and corresponding t- and p-values.

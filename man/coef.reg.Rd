@@ -4,10 +4,12 @@
 \alias{coef.reg}
 \title{coef.reg}
 \usage{
-\method{coef}{reg}(x)
+\method{coef}{reg}(object, ...)
 }
 \arguments{
-\item{x}{A reg class object}
+\item{object}{A reg class object}
+
+\item{...}{other arguments}
 }
 \value{
 Returns all estimated coefficients for the linear model

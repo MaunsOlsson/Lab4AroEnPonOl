@@ -4,10 +4,12 @@
 \alias{plot.reg}
 \title{plot.reg}
 \usage{
-\method{plot}{reg}(x)
+\method{plot}{reg}(x, ...)
 }
 \arguments{
 \item{x}{A reg class object}
+
+\item{...}{Other arguments}
 }
 \value{
 Returns a residual analysis which consists of two plots, fitted values vs residual and scale-location for each observation (fitted values vs standardized residual).

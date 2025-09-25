@@ -7,10 +7,11 @@
 pred(object, ...)
 }
 \arguments{
-\item{object}{model object to pass to predict}
+\item{object}{object that is used for the predictions}
 
-\item{...}{additional arguments to pass to predict}
+\item{...}{other arguments
+See \code{\link[stats]{predict}} for details.}
 }
 \description{
-See \code{\link[stats]{predict}} for details.
+Alternative prediction function
 }

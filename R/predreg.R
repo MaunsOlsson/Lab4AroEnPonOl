@@ -26,7 +26,6 @@ predict.reg <- function(model, new_data = FALSE){
 
 
 #' @title Alternative prediction function
-#' @description
 #' @param object object that is used for the predictions
 #' @param ... other arguments
 #' See \code{\link[stats]{predict}} for details.

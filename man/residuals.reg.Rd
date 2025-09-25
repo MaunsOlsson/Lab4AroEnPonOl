@@ -4,10 +4,12 @@
 \alias{residuals.reg}
 \title{resid.reg}
 \usage{
-\method{residuals}{reg}(x)
+\method{residuals}{reg}(x, ...)
 }
 \arguments{
 \item{x}{A reg class object}
+
+\item{...}{other arguments}
 }
 \value{
 Returns all the residuals for the linear model

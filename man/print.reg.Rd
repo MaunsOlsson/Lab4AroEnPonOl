@@ -4,10 +4,12 @@
 \alias{print.reg}
 \title{print.reg}
 \usage{
-\method{print}{reg}(x)
+\method{print}{reg}(x, ...)
 }
 \arguments{
 \item{x}{A reg class object}
+
+\item{...}{other functions}
 }
 \value{
 Returns the coefficients of the linear regression model
